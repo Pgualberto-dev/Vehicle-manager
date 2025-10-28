@@ -49,6 +49,6 @@ public class Veiculos {
 
     @Override
     public String toString() {
-        return "Veiculo [marca: " + marca + ", modelo: " + modelo + ", ano: " + ano + ", preco: $" + String.format("%.2f", preco) + "]";
+        return "Marca [" + marca + "], Modelo [" + modelo + "], Ano [" + ano + "], Preco [$" + String.format("%.2f", preco) + "]";
     }
 }
