@@ -12,4 +12,10 @@ public class VServices {
                 .toList();
     }
 
+    public List<Veiculos> buscarPorPreco ( double preco1, List<Veiculos> veiculos) {
+        return veiculos.stream()
+                .filter(v -> v.getPreco() >= preco1)
+                .toList();
+    }
+
 }
