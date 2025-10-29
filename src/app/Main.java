@@ -1,6 +1,8 @@
 package app;
 
 import entities.Garagem;
+
+
 import java.util.InputMismatchException;
 import java.util.Locale;
 import java.util.Scanner;
@@ -24,6 +26,7 @@ public class Main {
                     System.out.println("   REMOVER VEICULO   - [3] ");
                     System.out.println("     ENCERRAR        - [4] ");
                     opcao = sc.nextInt();
+                    sc.nextLine();
                     continuar = true;//muda a variavel para confirmar que passou
                 } catch (InputMismatchException e) {
                     System.out.println("ERRO!");
@@ -42,7 +45,7 @@ public class Main {
                     yield false;
                 }
                 case 3 -> {
-                    garagem.removerVeiculos(sc); // chama o metodo remover veiculos
+                    garagem.removerVeiculos(sc);  // chama o metodo remover veiculos
                     yield false;
                 }
                 default -> true;

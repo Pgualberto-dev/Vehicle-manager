@@ -113,6 +113,9 @@ public class Garagem {
         String modelo1 = sc.nextLine();
         boolean removed = servico.removerVeiculo(modelo1, getVeiculosList()); // chama o metodo removerVeiculo da classe VServices
         if (removed) {
+            for (Veiculos v : veiculosList) {
+                System.out.println(v);
+            }
             System.out.println("Veiculo removido com sucesso!");
         } else {
             System.out.println("Veiculo nao encontrado.");
