@@ -12,7 +12,7 @@ public class Main {
         Garagem garagem = new Garagem();
         int opcao = 0;
         boolean continuar = false;
-        while (opcao != 3) {
+        while (opcao != 4) {
 
             while (!continuar) {
                 try {
@@ -20,8 +20,9 @@ public class Main {
                     System.out.println("      BEM VINDO     ");
                     System.out.println("____________________");
                     System.out.println("CADASTRO DE VEICULOS - [1] ");
-                    System.out.println(" PESQUISAR VEICULO   - [2] ");
-                    System.out.println("  ENCERRAR - [3] ");
+                    System.out.println("  PESQUISAR VEICULO  - [2] ");
+                    System.out.println("   REMOVER VEICULO   - [3] ");
+                    System.out.println("     ENCERRAR        - [4] ");
                     opcao = sc.nextInt();
                     continuar = true;//muda a variavel para confirmar que passou
                 } catch (InputMismatchException e) {
@@ -33,11 +34,15 @@ public class Main {
 
             continuar = switch (opcao) { // Switch Expression ele retorna um valor, como se fosse uma expressão switch agora pode gerar um resultado
                 case 1 -> {
-                    garagem.cadastrarVeiculos(sc);
+                    garagem.cadastrarVeiculos(sc); // chama o metodo cadastrar veiculos
                     yield false; //serve para retornar um valor dentro do case o resultádo final é atribuído à variável continuar.
                 }
                 case 2 -> {
-                    garagem.pesquisarVeiculos(sc);
+                    garagem.pesquisarVeiculos(sc); // chama o metodo pesquisar veiculos
+                    yield false;
+                }
+                case 3 -> {
+                    garagem.removerVeiculos(sc); // chama o metodo remover veiculos
                     yield false;
                 }
                 default -> true;
